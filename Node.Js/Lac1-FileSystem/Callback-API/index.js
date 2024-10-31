@@ -25,53 +25,53 @@
 import * as fs from "fs";
 
 // Creating Directory Path should be there
-// fs.mkdir(
-//   "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\Node.Js\\Lac1-FileSystem\\Callback-API\\Nomi",
-//   { recursive: true }, // if path deos'n exits it will create it...
-//   (error) => {
-//     if (error) throw error;
-//     console.log("Directory Created......");
-//   }
-// );
+fs.mkdir(
+  "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\Node.Js\\Lac1-FileSystem\\Callback-API\\Nomi",
+  { recursive: true }, // if path deos'n exits it will create it...
+  (error) => {
+    if (error) throw error;
+    console.log("Directory Created......");
+  }
+);
 
 // Readc content inside Directory
-// fs.readdir(
-//   "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\Node.Js\\Lac1-FileSystem\\Callback-API",
-//   (error, files) => {
-//     if (error) throw error;
-//     for (const file of files) {
-//       console.log(file);
-//     }
-//   }
-// );
+fs.readdir(
+  "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\Node.Js\\Lac1-FileSystem\\Callback-API",
+  (error, files) => {
+    if (error) throw error;
+    for (const file of files) {
+      console.log(file);
+    }
+  }
+);
 
 // Remove Directory  & Directory Should be empty
-// fs.rmdir(
-//   "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\Node.Js\\Lac1-FileSystem\\Callback-API\\Nomi",
-//   (error) => {
-//     if (error) throw error;
-//     console.log("Removing.....");
-//   }
-// );
+fs.rmdir(
+  "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\Node.Js\\Lac1-FileSystem\\Callback-API\\Nomi",
+  (error) => {
+    if (error) throw error;
+    console.log("Removing.....");
+  }
+);
 
 // Create and write File
 
-// fs.writeFile("readme.txt", "Hello World", (error) => {
-//   if (error) throw error;
-//   console.log("file created");
-// });
+fs.writeFile("readme.txt", "Hello World", (error) => {
+  if (error) throw error;
+  console.log("file created");
+});
 
 // Read File
-// fs.readFile("readme.txt", "utf-8", (error, readFile) => {
-//   if (error) throw error;
-//   console.log(readFile);
-// });
+fs.readFile("readme.txt", "utf-8", (error, readFile) => {
+  if (error) throw error;
+  console.log(readFile);
+});
 
 // Apend Data into File
-// fs.appendFile("readme.txt", "Hello from Node", (error) => {
-//   if (error) throw error;
-//   console.log("Data Apend........");
-// });
+fs.appendFile("readme.txt", "Hello from Node", (error) => {
+  if (error) throw error;
+  console.log("Data Apend........");
+});
 
 // File copy
 fs.copyFile("readme.txt", "copyData.txt", (error) => {
