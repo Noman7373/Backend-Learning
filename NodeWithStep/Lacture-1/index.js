@@ -1,12 +1,34 @@
-//  Creating Server
+// import fs from "fs";
+// import path from "path";
+// import { writeFile } from "fs";
 
-import { writeFile } from "fs";
-import http from "http";
+// const dirName = path.dirname();
+// console.log(dirName);
 
-const server = http.createServer((req, res) => {
-  res.writeFile(200, "ok", { ContantType: "text/html" });
+// fs.writeFile(
+//   "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\NodeWithStep\\Lacture-1\\HelloDir\\text.txt",
+//   "Hello Node.Js",
+//   (error) => {
+//     if (error) throw new error();
+//     console.log("File created");
+//   }
+// );
 
-  if(req.url == "/") {
-    
-  }
-});
+// fs.appendFile(
+//   "C:\\Users\\Administrator\\Desktop\\BACKEND_LEARNING\\NodeWithStep\\Lacture-1\\HelloDir\\text.txt",
+//   "Noman Ahmed",
+//   (error) => {
+//     if (error) throw new error();
+//     console.log("Text apend ....F");
+//   }
+// );
+
+// Creating Server
+// import http from "http";
+
+// const server = http.createServer((req, res) => {
+//   res.writeFile(200, "ok", { ContantType: "text/html" });
+
+//   if (req.url == "/") {
+//   }
+// });
