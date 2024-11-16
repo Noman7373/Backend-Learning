@@ -1,0 +1,7 @@
+dotFile
+
+"allow" = No speacial treatment for dotfiles
+"deny" = Deny a request for a dotfile, respond with 403 then call next()
+"ignore" = Acts as if the dotfile deos not exist, respond with 404 , then call next()
+
+Note = With the defualt value , it will not ignore files in directory that begins with a dot
