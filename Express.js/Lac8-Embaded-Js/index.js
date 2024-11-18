@@ -1,19 +1,17 @@
-// ============================= EJS Template Engine ====================================
-// EJS (Embedded Javascript) is a simple language that let us generate HTML markup with plain Javascipt.
-// Advantage
-// * Fast complilation and rendering
-// * Simple Tamplet tag <% %>
-
 import express from "express";
-import userHome from "./Router/web.js";
+import { join } from "path";
+import homeRoute from "./Routes/web.js";
 const app = express();
 
-const PORT = process.env.PORT || 8000;
-
+const PORT = process.env.PORT || 3000;
+// EJS setup
 app.set("view engine", "ejs");
 
-app.use("", userHome);
+// Static file Setup
+app.use(express.static(join(process.cwd(), "public")));
+
+app.use("", homeRoute);
 
 app.listen(PORT, () => {
-  console.log(`Server listening at http://localhost${PORT}`);
+  console.log(`Server running at http://localhost${PORT}`);
 });

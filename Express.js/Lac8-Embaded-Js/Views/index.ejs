@@ -1,24 +1,4 @@
-<!-- <%-- Include Header --%>  -->
-<%- include('./partials/header.ejs') %>
-<!-- <%-- Include Navigation --%> -->
-<%- include('./partials/navigation.ejs') %>
-
-<h1>EJS Template Engine</h1>
-
-<!-- <%-- Creating Variable --%> -->
-<% let Learning = "Express.js" %>
-<!-- <%-- Displaying Variable --%> -->
-<p><%= Learning %></p>
-
-<!-- <%-- IF-Else Block --%> -->
-<% if (user) { %>
-<h1>Welcome, <%= name %></h1>
-<p>Email: <%= email %></p>
-<% if (isAdmin) { %>
-<h2>Admin Panel</h2>
-<% } %> <% } else { %>
-<h1>Guest</h1>
-<% } %>
-
-<!-- <% } %> <%-- Include Footer --%>  -->
-<%- include('./partials/footer.ejs') %>
+<%- include('./partials/navigation.ejs') -%> <%-
+include('./partials/header.ejs') -%>
+<h1>Home Page</h1>
+<%- include('./partials/footer.ejs') -%>

@@ -1,5 +1,6 @@
 const aboutPage = (req, res) => {
-  res.render("about");
+  let title = "About";
+  res.render("about", { title });
 };
 
 export { aboutPage };
