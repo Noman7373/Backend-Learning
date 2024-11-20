@@ -1,0 +1,21 @@
+{
+  "name": "lac5-views",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.2"
+  }
+}
