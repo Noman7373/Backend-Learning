@@ -35,16 +35,50 @@ const createDocuments = async () => {
     });
 
     const userSave = await createUserData.save();
-    console.log(userSave);
+    // console.log(userSave);
   } catch (error) {}
 };
 
-//  Retrive user Data
+//  Retrive user All Data
+// const getAllData = async () => {
+//     // to get All Data
+//   const result = await userModel.find();
+//   result.forEach((items) => {
+//     console.log(
+//       items.name,
+//       items.age,
+//       items.fees.toString(),
+//       items.hobbies[0],
+//       items.hobbies[1],
+//       items.isActive,
+//       items.comments[0].value,
+//       items.comments[0].publish.toLocaleDateString()
+//     );
+//   });
+
+// };
+
+//   ========================================   get single Userdata   ====================================
 const getAllData = async () => {
-  const result = await userModel.find();
-  result.forEach((items) => {
-    console.log(items.name);
-  });
-  //   console.log(result);
+  //   ========================================   get single Userdata   ====================================
+  //   const result = await userModel.findById("123455", "name age");
+  //   ==================================   Include  =====================================
+  //   const userNameAge1 = await userModel.find().select("name age");        // method 1  include
+  //   const userNameAge1 = await userModel.find().select(["name", "age"]); // method 2   include
+  //   const userNameAge3 = await userModel.find().select({ name: 1, age: 1 }); // method 3  include
+  //   ==================================   Exclude  =====================================
+  //   const userNameAge4 = await userModel.find().select("-name -age"); // method 1 exclude
+  //   const userNameAge5 = await userModel.find().select([ '-name', '-age' ]); // method 2 exclude
+  //   const userNameAge6 = await userModel.find().select({ name: 0, age: 0 }); //  method 2 exclude
+
+  //   ================   getData with limit() , skip() , count() ,sorting()  =========================
+
+  //   const getLimitData = await userModel.find().limit(1);
+  //   const getLimitData1 = await userModel.find().limit(1);
+  //   const getLimitData2 = await userModel.find().skip(1);
+  //   const getLimitData3 = await userModel.find().countDocuments();
+  //   const getLimitData4 = await userModel.find().sort({ age: 1 });
+  const getLimitData5 = await userModel.find().sort({ age: -1 });
+  console.log(getLimitData5);
 };
 export { getAllData };
