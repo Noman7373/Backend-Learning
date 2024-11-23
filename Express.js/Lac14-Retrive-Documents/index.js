@@ -3,7 +3,7 @@ import dbConnect from "./db/dbConnect.js";
 // import { createDocuments } from "./models/userScehma.js";
 
 // get data fuction import
-import { getAllData } from "./models/userScehma.js";
+import { getAllData, getSingleUserData } from "./models/userScehma.js";
 import homeController from "./routers/web.js";
 const app = express();
 
@@ -16,6 +16,7 @@ dbConnect(DATABASE_URL);
 // createDocuments();
 
 getAllData();
+getSingleUserData();
 
 app.use("", homeController);
 

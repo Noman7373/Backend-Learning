@@ -36,64 +36,71 @@ const createDocuments = async () => {
 
     const userSave = await createUserData.save();
     // console.log(userSave);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    
+  }
 };
 
 //  Retrive user All Data
-// const getAllData = async () => {
-//     // to get All Data
-//   const result = await userModel.find();
-//   result.forEach((items) => {
-//     console.log(
-//       items.name,
-//       items.age,
-//       items.fees.toString(),
-//       items.hobbies[0],
-//       items.hobbies[1],
-//       items.isActive,
-//       items.comments[0].value,
-//       items.comments[0].publish.toLocaleDateString()
-//     );
-//   });
+const getAllData = async () => {
+  const result = await userModel.find();
+  result.forEach((items) => {
+    console.log(
+      items.name,
+      items.age,
+      items.fees.toString(),
+      items.hobbies[0],
+      items.hobbies[1],
+      items.isActive,
+      items.comments[0].value,
+      items.comments[0].publish.toLocaleDateString()
+    );
+  });
 
-// };
+};
 
 //   ========================================   get single Userdata   ====================================
-const getAllData = async () => {
+const getSingleUserData = async () => {
   //   ========================================   get single Userdata   ====================================
-  //   const result = await userModel.findById("123455", "name age");
+    const result = await userModel.findById("123455", "name age");
   //   ==================================   Include  =====================================
-  //   const userNameAge1 = await userModel.find().select("name age");        // method 1  include
-  //   const userNameAge1 = await userModel.find().select(["name", "age"]); // method 2   include
-  //   const userNameAge3 = await userModel.find().select({ name: 1, age: 1 }); // method 3  include
+    const userNameAge1 = await userModel.find().select("name age");              // method 1  include
+    const userNameAge2 = await userModel.find().select(["name", "age"]);         // method 2   include
+    const userNameAge3 = await userModel.find().select({ name: 1, age: 1 });     // method 3  include
+
   //   ==================================   Exclude  =====================================
-  //   const userNameAge4 = await userModel.find().select("-name -age"); // method 1 exclude
-  //   const userNameAge5 = await userModel.find().select([ '-name', '-age' ]); // method 2 exclude
-  //   const userNameAge6 = await userModel.find().select({ name: 0, age: 0 }); //  method 2 exclude
+
+    const userNameAge4 = await userModel.find().select("-name -age");                // method 1 exclude
+    const userNameAge5 = await userModel.find().select([ '-name', '-age' ]);         // method 2 exclude
+    const userNameAge6 = await userModel.find().select({ name: 0, age: 0 });         //  method 2 exclude
+
   //   ================   getData with limit() , skip() , count() ,sorting()  =========================
-  //   const getLimitData = await userModel.find().limit(1);
-  //   const getLimitData1 = await userModel.find().limit(1);
-  //   const getLimitData2 = await userModel.find().skip(1);
-  //   const getLimitData3 = await userModel.find().countDocuments();
-  //   const getLimitData4 = await userModel.find().sort({ age: 1 });
-  //   const getLimitData5 = await userModel.find().sort({ age: -1 });
-  //   console.log(getLimitData5);
+
+    const getLimitData = await userModel.find().limit(1);
+    const getLimitData1 = await userModel.find().limit(1);
+    const getLimitData2 = await userModel.find().skip(1);
+    const getLimitData3 = await userModel.find().countDocuments();
+    const getLimitData4 = await userModel.find().sort({ age: 1 });
+    const getLimitData5 = await userModel.find().sort({ age: -1 });
+
   //   ================   Comparison Operator  ($eq , $ne, $gt , $gte , $lt, $lte , $in , $nin) =========================
 
-  //   const data1 = await userModel.find({ age: { $eq: 24 } });
-  //   const data2 = await userModel.find({ age: { $nt: 24 } });
-  //   const data3 = await userModel.find({ age: { $gt: 24 } });
-  //   const data4 = await userModel.find({ age: { $gte: 24 } });
-  //   const data5 = await userModel.find({ age: { $lt: 24 } });
-  //   const data6 = await userModel.find({ age: { $lte: 24 } });
-  //   const data7 = await userModel.find({ age: { $in: [22, 25] } });
-  //   const data8 = await userModel.find({ age: { $nin: [22, 25] } }); // not in
-  //   console.log(data8);
+    const data1 = await userModel.find({ age: { $eq: 24 } });
+    const data2 = await userModel.find({ age: { $nt: 24 } });
+    const data3 = await userModel.find({ age: { $gt: 24 } });
+    const data4 = await userModel.find({ age: { $gte: 24 } });
+    const data5 = await userModel.find({ age: { $lt: 24 } });
+    const data6 = await userModel.find({ age: { $lte: 24 } });
+    const data7 = await userModel.find({ age: { $in: [22, 25] } });
+    const data8 = await userModel.find({ age: { $nin: [22, 25] } });        // not in
 
-  //   ===================      Logical Operator  ($and()  ,  $or() )   ==================================
-  //   const logical1 = await userModel.find({$and: [{ name: "Nomi Khan" }, { age: 25 }]});   // $and both field should exits
-//   const logical2 = await userModel.find({$or: [{ name: "Nomi Khan" }, { age: 25 }]}); // $or at least one field should exits
-  const logical3 = await userModel.find({$or: [{ name: "Nomi Khan" }, { age: 25 }]}); // $or at least one field should exits
-  console.log(logical3);
+  //   ===================      Logical Operator  ($and()  ,  $or() , $not() , $nor() )   ==================================
+
+  const logical1 = await userModel.find({$and: [{ name: "Nomi Khan" }, { age: 25 }]});   // $and both field should exits
+  const logical2 = await userModel.find({$or: [{ name: "Nomi Khan" }, { age: 25 }]});    // $or at least one field should exits
+  const logical3 = await userModel.find({age:{$not:{$gt:24}}});                        // $not if value not match specfic value
+  const logical4 = await userModel.find({$nor:[{age:24} , {age:22}]});      // $nor if given both value not match specfic value
+
 };
-export { getAllData };
+export { getAllData , getSingleUserData };
