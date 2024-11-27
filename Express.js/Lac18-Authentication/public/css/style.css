@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: aqua;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+nav ul {
+  display: flex;
+  gap: 4rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  color: black;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.form-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  height: 440px;
+  width: 400px;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.form-Container form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-Container form label {
+  font-size: 1.2rem;
+}
+
+.form-Container form input {
+  width: 100%;
+  padding: 0.6rem;
+  outline: none;
+  /* margin-top: 0.3rem; */
+  font-size: 1.2rem;
+}
+
+form .submitBtn {
+  margin-top: 0.3rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background-color: rgb(15, 96, 123);
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+form .submitBtn:hover {
+  background-color: blue;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login {
+    margin-top: 0.3rem;
+}
+
+.login a {
+  text-decoration: none;
+  font-size: 1.1rem;
+}
